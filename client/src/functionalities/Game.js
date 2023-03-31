@@ -2,11 +2,6 @@ import React from "react";
 //import image from '../Images/board-img.jpg'
 // import Board from "./Board";
 
-// function img () {
-//   return (
-//     <div className="img" style={{backgroundImage: `url(${image})`, backgroundRepeat: "no-repeat"}} />
-//   )
-// }
 
 
 function Game() {
@@ -15,8 +10,8 @@ function Game() {
       <nav>
         {/* <input type="checkbox" id="theme" name="theme" /> */}
         <label for="theme"></label>
-        <h1 style={{textDecoration: ""}}> Tic Tac Toe </h1>
-        <div></div>
+        <h1 style={{textDecoration: ""}}> Welcome to Ikraan's Tic-Tac-Toe Game! </h1>
+        <div><p></p></div>
       </nav>
       <aside className="aside">
         <div id="gameContainer">
