@@ -1,56 +1,77 @@
-import { render } from "express/lib/response";
-import React, { useState, useEffect } from "react";
 
-// // SERVICES THAT CALL OUR API ENDPOINTS
-// import { getAllProfiles } from "./services/profileService";
+import "./App.css";
+ import React from "react-router-dom";
+// import Cookies from "universal-cookie";
+import Game from "./functionalities/Game";
+// import Login from "./functionalities/Login";
+// import Signup from "./functionalities/Signup";
+import Board from "./functionalities/Board";
 
-// function App() {
-//   const [profiles, setProfiles] = useState(null);
 
-//   useEffect(() => {
-//     async function getProfiles() {
-//       if (!profiles) {
-//         const response = await getAllProfiles();
-//         setProfiles(response);
-//       }
-//     }
+function App() {
 
-//     getProfiles();
-//   }, [profiles]);
+  return ( 
+    <div className="App">
+      <Game />
+      <Board /> 
+    </div>
+  )}
+  
+// const cookies = new Cookies();
+// const [user, setUser] = useState(null);
+// const [isAuth, setIsAuth] = useState(false);
 
-//   const renderProfile = (user) => {
-//     return (
-//       <li key={user._id}>
-//         <h3>
-//           {`${user.first_name} 
-//           ${user.last_name}`}
-//         </h3>
-//         <p>{user.location}</p>
-//       </li>
-//     );
-//   };
-
-//   return (
-//     <div>
-//       <ul>
-//         {profiles && profiles.length > 0 ? (
-//           profiles.map((profile) => renderProfile(profile))
-//         ) : (
-//           <p>No profiles found</p>
-//         )}
-//       </ul>
-//     </div>
-//   );
+// useEffect(() => {
+// const token = cookies.get("token");
+// if (!token) {
+// setIsAuth(false);
+// setUser(null);
+// } else {
+// const userData = {
+// id: cookies.get("userId"),
+// name: cookies.get("username"),
+// firstName: cookies.get("firstName"),
+// lastName: cookies.get("lastName"),
+// hashedPassword: cookies.get("hashedPassword"),
+// };
+// user.connectUser(userData, token)
+// .then((user) => {
+// setIsAuth(true);
+// setUser(user);
+// })
+// .catch((error) => {
+// console.log(error);
+// setIsAuth(false);
+// setUser(null);
+// });
 // }
+// }, [cookies, user]);
 
-// export default App;
+// const handleSignup = () => {
+// setIsAuth(true);
+// };
 
-function App(){
-  return (
-  <div className="App">
-    <Game />
-  </div>
-);
-}
+// const handleLogin = () => {
+// setIsAuth(true);
+// };
+
+// return (
+// <>
+// {!isAuth && (
+// <>
+
+
+// </>
+// )}
+// {isAuth && user && (
+// <>
+
+
+
+// </>
+// )}
+// </>
+// );
+
 
 export default App;
