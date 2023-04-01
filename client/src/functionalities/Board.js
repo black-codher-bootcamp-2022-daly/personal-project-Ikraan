@@ -99,6 +99,7 @@ O
   </span>
   </div>
   <div className="status"><p>{status}</p></div>
+  <div className="box">
   <div className="board-row">
     {renderSquare(0)}
     {renderSquare(1)}
@@ -114,7 +115,7 @@ O
     {renderSquare(7)}
     {renderSquare(8)}
   </div>
-  
+  </div>
   <div>
   <button className="restart" onClick={handleRestart}>
 
