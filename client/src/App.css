@@ -10,8 +10,7 @@ body{
   color: white;
   font-weight: bold;
   text-align: left;
-  display: flex;
-  padding:20px;
+  /* display: flex; */
   margin: auto 0;
 }
 .restart {

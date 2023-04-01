@@ -1,8 +1,7 @@
 # Tic-Tac-Toe
-This is a web-based Tic-Tac-Toe game built using React Javascript Html Css.
+This is a web-based Tic-Tac-Toe game built using React Javascript Html and Css.
 
 # Features
-- Two-player mode
 - Player vs computer
 - Responsive design for various screen sizes
 
@@ -22,4 +21,17 @@ Once the application is running, simply navigate to http://localhost:3001 in you
 - React Router
 
 # Screenshots
+Home Screen: 
+![Home Screen Screenshot](./client/src/screenshots/ProjectGame1.png)
 
+Enter Player Names:
+![Enter Name Screenshot](./client/src/screenshots/ProjectGame2.png)
+
+Select Play of Choice:
+![Select Play of Choice Screenshot](./client/src/screenshots/ProjectGame3.png)
+
+Play Game:
+![Play Game Screenshot](./client/src/screenshots/ProjectGame4.png)
+
+Declaring Winner: 
+![Declaring Winner Screenshot](./client/src/screenshots/ProjectGame5.png)
