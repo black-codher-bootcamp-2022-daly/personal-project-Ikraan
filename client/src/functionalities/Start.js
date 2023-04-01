@@ -25,7 +25,7 @@ function Start(props) {
                     <h1>How would you like to play?</h1>
                     <div className="buttons">
                         <button style={{ fontWeight: "bold", textDecoration: "underline"}} onClick={() => navigate(`/joingame`)} type='button' className="startBtn">Join Game</button>
-                        <button onClick={() => navigate(`/Start`)} type='button' className="startBtn">Join a Game</button>
+                        <button onClick={() => navigate(`/Start`)} type='button' className="startBtn">Join Game</button>
                     </div>
                     <button onClick={() => window.location.reload()}>Change Name</button>
                 </div>

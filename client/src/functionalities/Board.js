@@ -1,4 +1,5 @@
-import React  from "react";
+import "../App.css"
+import React from "react";
 
 
 export function Square({ value, onClick }) {
@@ -11,7 +12,6 @@ export function Square({ value, onClick }) {
 
 function Board() {
   const [squares, setSquares] = React.useState(Array(9).fill(null));
-  // const [X, setX] = React.useState(true);
   const [player, setPlayer] = React.useState("X");
 
   const handleClick = (i) => {
@@ -23,7 +23,7 @@ function Board() {
       return;
     }
     const newSquares = [...squares];
-    newSquares[i] = "X" ? "X" : "O";
+    newSquares[i] = player === "X" ? "X" : "O";
     setSquares(newSquares);
     setPlayer(player);
     computerPlay(newSquares);
@@ -39,7 +39,7 @@ function Board() {
     if (indexes.length > 0) {
       const randomIndex = Math.floor(Math.random() * indexes.length);
       const computerMove = indexes[randomIndex];
-      newSquares[computerMove] = "O" ? "O" : "X";
+      newSquares[computerMove] = player === "X" ? "O" : "X";
       setSquares(newSquares);
       setPlayer(player);
       const winner = checkWinner(newSquares);
@@ -66,12 +66,11 @@ function Board() {
   const handleChooseX = () => {
     setPlayer("X");
     setSquares(Array(9).fill(null));
-    };
-    
-    const handleChooseO = () => {
+  };
+  const handleChooseO = () => {
     setPlayer("O");
     setSquares(Array(9).fill(null));
-    };
+  };
   const renderSquare = (i) => {
     return (
       <Square
@@ -82,73 +81,77 @@ function Board() {
     );
   };
 
-  return (winner ? null :(
-    <div> 
-      <button className="chooseX" onClick={() => handleChooseX()}>X</button>
-        <button className="chooseO" onClick={() => handleChooseO()}>O</button>
-        </div>
-  ),
-    <div className="tableContainer">
-      <div className="container"><div>
-        <span>
-        <button onClick={() => setPlayer("X")}>X</button>
-        <button onClick={() => setPlayer("O")}>O</button>
-        </span>
-        </div>
-        <div className="status"><p>{status}</p></div>
-        <div className="board-row">
-          {renderSquare(0)}
-          {renderSquare(1)}
-          {renderSquare(2)}
-        </div>
-        <div className="board-row">
-          {renderSquare(3)}
-          {renderSquare(4)}
-          {renderSquare(5)}
-        </div>
-        <div className="board-row">
-          {renderSquare(6)}
-          {renderSquare(7)}
-          {renderSquare(8)}
-        </div>
-        
+  return (
+      (winner ? null : (
         <div>
-        <button className="restart" onClick={handleRestart}>
+          <button className="chooseX" onClick={() => handleChooseX()}>
+            X
+          </button>
+          <button className="chooseO" onClick={() => handleChooseO()}>
+O
+</button>
+</div>
+),<div className="tableContainer">
+<div className="container"><div>
+  <span>
+  <button onClick={() => setPlayer("X")}>X</button>
+  <button onClick={() => setPlayer("O")}>O</button>
+  </span>
+  </div>
+  <div className="status"><p>{status}</p></div>
+  <div className="board-row">
+    {renderSquare(0)}
+    {renderSquare(1)}
+    {renderSquare(2)}
+  </div>
+  <div className="board-row">
+    {renderSquare(3)}
+    {renderSquare(4)}
+    {renderSquare(5)}
+  </div>
+  <div className="board-row">
+    {renderSquare(6)}
+    {renderSquare(7)}
+    {renderSquare(8)}
+  </div>
+  
+  <div>
+  <button className="restart" onClick={handleRestart}>
 
-          Restart Game
-        </button>
-        </div>
-      </div>
-    </div>
-  );
-}
+    Restart Game
+  </button>
+  </div>
+</div>
+</div>
+))
+  }
 
 export function checkWinner(squares) {
-  const winningPatterns = [
-    //horizontal winning patterns.
-    [0, 1, 2],
-    [3, 4, 5],
-    [6, 7, 8],
-    //vertical winning patterns.
-    [0, 3, 6],
-    [1, 4, 7],
-    [2, 5, 8],
-    //diagonal winning patterns.
-    [0, 4, 8],
-    [2, 4, 6],
-  ];
+const winningPatterns = [
+//horizontal winning patterns.
+[0, 1, 2],
+[3, 4, 5],
+[6, 7, 8],
+//vertical winning patterns.
+[0, 3, 6],
+[1, 4, 7],
+[2, 5, 8],
+//diagonal winning patterns.
+[0, 4, 8],
+[2, 4, 6],
+];
 
-  for (let i = 0; i < winningPatterns.length; i++) {
-    const [a, b, c] = winningPatterns[i];
+for (let i = 0; i < winningPatterns.length; i++) {
+const [a, b, c] = winningPatterns[i];
 
-    if (
-      squares[a] &&
-      squares[a] === squares[b] &&
-      squares[a] === squares[c]
-    ) {
-      return squares[a];
-    }
-  }
+if (
+squares[a] &&
+squares[a] === squares[b] &&
+squares[a] === squares[c]
+) {
+return squares[a];
+}
+}
 }
 
 export default Board;

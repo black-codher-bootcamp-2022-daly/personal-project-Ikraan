@@ -1,3 +1,4 @@
+import "../App.css";
 import React from "react";
 //import image from '../Images/board-img.jpg'
 // import Board from "./Board";
